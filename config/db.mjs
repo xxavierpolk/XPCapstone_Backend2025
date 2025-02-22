@@ -2,11 +2,12 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const db = process.env.mongoURI;
+const db = process.env.MONGO_URI;
 
-const connectDB = async () => {
+async function connectDB() {
+
   try {
-    await mongoose.connect(db, {
+     await mongoose.connect(db, {
       useNewUrlParser: true,
     });
 
