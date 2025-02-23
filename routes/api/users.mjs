@@ -29,7 +29,7 @@ router.post('/', [
     const { name, email, password } = req.body;
 
     try {
-        
+        // 
     } catch (error) {
         console.error(error)
         res.status(500).json({ errors: [{ msg: 'Server Error' }] });
