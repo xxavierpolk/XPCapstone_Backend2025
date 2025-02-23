@@ -58,7 +58,7 @@ router.post('/', [
         const payload = {
             user: {
                 id: newUser.id,
-                name: newUser.name // Temp for testing only
+               
             },
         };
         // Sign the token. If there are no errors, send the token to the frontend
