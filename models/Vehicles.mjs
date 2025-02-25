@@ -21,18 +21,18 @@ const VehicleSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    condition: {
-        type: String,
-        required: true,
-    },
-    engine: {
-        type: String,
-        required: true,
-    },
-    maintenance: {
-        type: String,
-        required: true,
-    },
+    // condition: {
+    //     type: String,
+    //     required: true,
+    // },
+    // engine: {
+    //     type: String,
+    //     required: true,
+    // },
+    // maintenance: {
+    //     type: String,
+    //     required: true,
+    // },
 });
 
 const Vehicle = mongoose.model('vehicle', VehicleSchema);

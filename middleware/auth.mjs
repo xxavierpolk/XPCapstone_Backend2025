@@ -12,7 +12,7 @@ export default (req, res, next) => {
   // Verify token
   try {
     // Check if token from frontend came from us
-    const decoded = jwt.verify(token, process.env.jwtSecret);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     // Save decoded user to request
     req.user = decoded.user;
