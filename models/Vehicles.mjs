@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const VehicleSchema = new mongoose.Schema({
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',
+    },
     make: {
         type: String,
         required: true,

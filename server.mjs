@@ -3,6 +3,7 @@ import connectDB from './config/db.mjs';
 import dotenv from 'dotenv';
 import userRoutes from './routes/api/users.mjs';
 import authRoutes from './routes/api/auth.mjs';
+import vehicleRoutes from './routes/api/vehicles.mjs';
 import cors from 'cors'
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(cors())
 //Define Routes
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/vehicles', vehicleRoutes);
 
 // Enviromental Variables
 const PORT = process.env.PORT || 3000;
