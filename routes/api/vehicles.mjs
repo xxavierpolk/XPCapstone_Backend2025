@@ -99,7 +99,7 @@ router.delete('/:vehicleid', async (req, res) => {
             return res.status(404).json({ errors: [{ msg: 'No Vehicle Found In This Lot'}]})
         }
 
-        res.json(deleted).sendStatus(200).alert('Vehicle Deleted');
+        res.status(200).json(deleted)
         
     } catch (error) {
         console.log(error);
