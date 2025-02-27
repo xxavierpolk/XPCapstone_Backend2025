@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:userid', async (req, res) => {
+router.get('/user/:userid', async (req, res) => {
     try {
         console.log(req.params.userid)
         const user = await User.findById(req.params.userid);
@@ -32,7 +32,17 @@ router.get('/:userid', async (req, res) => {
     }
 });
 
-
+router.get('/:vehicleid', async (req, res) => {
+    console.log(req.params.vehicleid)
+    try {
+        const vehicle = await Vehicle.findById(req.params.vehicleid);
+        console.log(vehicle)
+        res.json(vehicle);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ errors: [{ msg: 'Server Error || Vehicle Not Found' }] });
+    }
+})
 
 
 // @route:   POST /api/vehicles
@@ -70,6 +80,7 @@ router.post(
 
 
 router.put('/:vehicleid', async (req, res) => {
+    console.log("testing change")
     const updated = await Vehicle.findByIdAndUpdate(req.params.vehicleid, req.body, {
         new: true
     });
